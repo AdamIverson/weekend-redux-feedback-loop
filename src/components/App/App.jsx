@@ -2,10 +2,17 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-
+import { useDispatch } from 'react-redux';
+import Comments from '../Comments/Comments';
+import Feeling from '../Feeling/Feeling';
+import Review from '../Review/Review'
+import Success from '../Success/Success';
+import Support from '../Support/Support';
+import Understanding from '../Understanding/Understanding';
 
 function App() {
-
+  const dispatch = useDispatch();
+  
   return (
     <div className='App'>
       <header className='App-header'>
