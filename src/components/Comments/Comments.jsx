@@ -4,16 +4,34 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useHistory} from 'react-router-dom';
 
 function Comments() {
+  const dispatch = useDispatch();
+  const comments = useSelector((store) => store.comments)
+
+  let [newComment, setNewComment] = useState({
+    comment: ""
+  });
+
+  const addNewComment = (event) => {
+    setNewComment({
+      ...newComment,
+      type: event.target.value,
+    });
+    goToReview();
+  };
+
+  const history = useHistory();
+  const goToReview = () => {
+    console.log('Going to Review');
+    history.push('/review')
+  }
 
   return (
       <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
-        </header>
-
-      
-      </div>>
+        <form>
+          <textarea rows="10" cols="50" type="text" placeholder="comments"/>
+          <button onClick={addNewComment}>NEXT</button>
+        </form>
+      </div>
   );
 };
 

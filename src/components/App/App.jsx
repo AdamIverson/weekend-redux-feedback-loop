@@ -12,6 +12,9 @@ import Understanding from '../Understanding/Understanding';
 
 function App() {
   const dispatch = useDispatch();
+  // I strongly considered consolidating newFeedback here as one piece of state
+  // I already started down this path of many Reducers, though, so I'll see it through
+  // I can always refactor later, for now I'll take the reps
   
   return (
     <div className='App'>
@@ -24,7 +27,7 @@ function App() {
         <Route exact path="/">
           <Feeling />
         </Route>
-        <Route exact path="/understanding">
+        <Route exact path='/understanding'>
           <Understanding />
         </Route>
         <Route exact path="/support">
@@ -36,7 +39,7 @@ function App() {
          <Route exact path="/review">
            <Review />
          </Route>
-         <Route exact path="/">
+         <Route exact path="/success">
            <Success />
          </Route>
       </Router>

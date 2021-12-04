@@ -5,15 +5,16 @@ import {useHistory} from 'react-router-dom';
 
 function Success() {
 
+  const history = useHistory();
+  const startOver = () => {
+    console.log('Going to Review');
+    history.push('/')
+  }
+
   return (
       <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
-        </header>
-
-      
-      </div>>
+        <button onClick={startOver}>Leave New Feedback!</button>
+      </div>
   );
 };
 

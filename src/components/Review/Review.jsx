@@ -3,18 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useHistory} from 'react-router-dom';
 
-function Comments() {
+function Review() {
+  const dispatch = useDispatch();
+  const comments = useSelector((store) => store.comments)
+
+  const history = useHistory();
+  const goToSuccess = () => {
+    console.log('Going to Success');
+    history.push('/success')
+  }
 
   return (
       <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
-        </header>
-
-      
-      </div>>
+          <button onClick={goToSuccess}>NEXT</button>
+      </div>
   );
 };
 
-export default Comments;
+export default Review;
