@@ -12,10 +12,6 @@ function Feeling() {
   });
 
   const history = useHistory();
-  const goToUnderstanding = () => {
-    console.log("Going to Understanding");
-    history.push("/understanding");
-  };
 
   const handleNewFeeling = (event) => {
     setNewFeeling({
@@ -25,15 +21,13 @@ function Feeling() {
   };
 
   const addNewFeeling = (event) => {
-    console.log("new feeling dispatch", newFeeling);
-    console.log(newFeeling.feeling);
     
-    if(newFeeling.feeling > 0) {
+    if(newFeeling.feeling != "") {
     dispatch({
       type: "FEELING",
       payload: newFeeling,
     });
-    goToUnderstanding();
+    history.push("/understanding");
   } else {
     alert('no')
     console.log('no');

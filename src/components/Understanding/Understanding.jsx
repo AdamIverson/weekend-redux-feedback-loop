@@ -11,10 +11,6 @@ function Understanding() {
   });
 
   const history = useHistory();
-  const goToSupport = () => {
-    console.log("Going to Support");
-    history.push("/support");
-  };
 
   const handleNewUnderstanding = (event) => {
     setNewUnderstanding({
@@ -24,12 +20,16 @@ function Understanding() {
   };
 
   const addNewUnderstanding = (event) => {
-    console.log("new understanding dispatch", newUnderstanding);
+    
+    if(newUnderstanding.understanding != "") {
     dispatch({
       type: "UNDERSTANDING",
       payload: newUnderstanding,
     });
-    goToSupport();
+    history.push("/support");
+  } else{ 
+    alert('no')
+  }
   };
 
   return (

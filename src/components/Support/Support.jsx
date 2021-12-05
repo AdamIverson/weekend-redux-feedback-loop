@@ -11,10 +11,6 @@ function Support() {
   });
 
   const history = useHistory();
-  const goToComments = () => {
-    console.log("Going to Comments");
-    history.push("/comments");
-  };
 
   const handleNewSupport = (event) => {
     setNewSupport({
@@ -25,11 +21,15 @@ function Support() {
 
   const addNewSupport = (event) => {
     console.log("new feeling dispatch", newSupport);
+    if(newSupport.support != "") {
     dispatch({
       type: "SUPPORT",
       payload: newSupport,
     });
-    goToComments();
+    history.push("/comments");
+    } else {
+      alert('no');
+    } 
   };
 
   return (
