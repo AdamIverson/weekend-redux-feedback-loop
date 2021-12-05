@@ -2,9 +2,15 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
+
+// send that data on to the database
 router.post("/", async (req, res) => {
   const client = await pool.connect();
 
+
+  // truth time I don't understand everything happening here
+  // I understand the SQL query.
+  // much copy/paste
   try {
     const { feeling, understanding, support, comments } = req.body;
     await client.query("BEGIN");

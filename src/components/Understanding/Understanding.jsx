@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Understanding() {
   const dispatch = useDispatch();
+  
 
   let [newUnderstanding, setNewUnderstanding] = useState({
     understanding: 0,
@@ -21,14 +22,16 @@ function Understanding() {
 
   const addNewUnderstanding = (event) => {
     
-    if(newUnderstanding.understanding != "") {
+    if(newUnderstanding.understanding > 0 && newUnderstanding.understanding <= 10) {
     dispatch({
       type: "UNDERSTANDING",
       payload: newUnderstanding,
     });
     history.push("/support");
-  } else{ 
-    alert('no')
+  } else if (newUnderstanding.understanding === ""){ 
+    alert('please enter one support');
+  } else if (newUnderstanding.understanding > 10) {
+      alert('too much support there pal')
   }
   };
 
@@ -39,7 +42,7 @@ function Understanding() {
         <input
           onChange={handleNewUnderstanding}
           type="number"
-          placeholder="understanding"
+          placeholder="1-10"
         />
         <button type="button" onClick={addNewUnderstanding}>
           NEXT

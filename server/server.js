@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("build"));
 
 /** ---------- EXPRESS ROUTES ---------- **/
+
+// just the one router. keep it clean, tiger.
+
 const feedbackRouter = require("./routes/feedback.router.js");
 app.use("/feedback", feedbackRouter);
 

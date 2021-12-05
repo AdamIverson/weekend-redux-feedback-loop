@@ -1,44 +1,44 @@
 ### Checklist 
 
 
-  [ ] Feelilng
+  [x] Feelilng
     [x] input - number - required
     [x] next button to dispatch to Redux
     [x] Route function - history.push('/understanding')
     [x] reducer - 'FEELING'
     [x] Route
-  [ ] Understanding
-    [ ] input - number - required
-    [ ] next button dispatch to Redux
-    [ ] route: history.push('/support')
-    [ ] reducer - 'UNDERSTANDING'
+  [x] Understanding
+    [x] input - number - required
+    [x] next button dispatch to Redux
+    [x] route: history.push('/support')
+    [x] reducer - 'UNDERSTANDING'
     [x] Route
-  [ ] Support
-    [ ] input - number - required
-    [ ] next button dispatch to Redux
-    [ ] Route function - history.push('/comments')
-    [ ] reducer - 'SUPPORT'
+  [x] Support
+    [x] input - number - required
+    [x] next button dispatch to Redux
+    [x] Route function - history.push('/comments')
+    [x] reducer - 'SUPPORT'
     [x] Route
-  [ ] Comments
-    [ ] input - text
-    [ ] next button to dispatch
-    [ ] Route function - history.push('/review')
-    [ ] reducer - 'COMMENTS'
+  [x] Comments
+    [x] input - text
+    [x] next button to dispatch
+    [x] Route function - history.push('/review')
+    [x] reducer - 'COMMENTS'
     [x] Route
-  [ ] Review
-    [ ] input - number - required
-    [ ] Route function - history.push('/success')
-    [ ] submit button to fire POST & route to Success
-    [ ] POST Route
-  [ ] Success Page
-    [ ] 'Leave New Feedback' button 
-    [ ] clear inputs
-    [ ] Route to Understanding
-  [ ] Double-Check Reducers
-    [ ] FEELING
-    [ ] UNDERSTANDING
-    [ ] SUPPORT
-    [ ] COMMENTS
+  [x] Review
+    [x] input - number - required
+    [x] Route function - history.push('/success')
+    [x] submit button to fire POST & route to Success
+    [x] POST Route
+  [x] Success Page
+    [x] 'Leave New Feedback' button 
+    [x] clear inputs
+    [x] Route to Understanding
+  [x] Double-Check Reducers
+    [x] FEELING
+    [x] UNDERSTANDING
+    [x] SUPPORT
+    [x] COMMENTS
 
        [ ] Update Scores
         [ ] hand to god i have no idea

@@ -28,7 +28,7 @@ function Support() {
     });
     history.push("/comments");
     } else {
-      alert('no');
+      alert('but not empty');
     } 
   };
 
@@ -39,7 +39,7 @@ function Support() {
         <input
           onChange={handleNewSupport}
           type="number"
-          placeholder="support"
+          placeholder="any number go nuts"
         />
         <button type="button" onClick={addNewSupport}>
           NEXT
