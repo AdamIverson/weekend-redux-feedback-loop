@@ -11,10 +11,6 @@ function Comments() {
   });
 
   const history = useHistory();
-  const goToReview = () => {
-    console.log("Going to Review");
-    history.push("/review");
-  };
 
   const handleNewComment = (event) => {
     setNewComment({
@@ -29,12 +25,13 @@ function Comments() {
       type: "COMMENT",
       payload: newComment,
     });
-    goToReview();
+    history.push("/review");
   };
 
   return (
     <div className="App">
       <form onSubmit={(event) => addNewComment(event)}>
+        {/* lookit that friggin textarea */}
         <textarea
           onChange={handleNewComment}
           rows="10"

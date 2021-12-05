@@ -58,6 +58,7 @@ function Feeling() {
               type="number"
               placeholder="1-10"
             ></input>
+            {/* is this too much addNewFeeling? maybe it is */}
             <button type="button" onClick={addNewFeeling}>
               NEXT
             </button>

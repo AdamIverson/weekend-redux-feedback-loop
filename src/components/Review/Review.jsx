@@ -5,6 +5,7 @@ import axios from "axios";
 
 function Review() {
   console.log("inside Review");
+  // let's get that state back from those reducers in the index
   const dispatch = useDispatch();
   const feeling = useSelector((store) => store.feelingReducer);
   const understanding = useSelector((store) => store.understandingReducer);
@@ -12,14 +13,10 @@ function Review() {
   const comments = useSelector((store) => store.commentsReducer);
 
   const history = useHistory();
-  const goToSuccess = () => {
-    console.log("Going to Success");
-    history.push("/success");
-  };
 
   const handleFeedback = () => {
     console.log("inside handleFeedback");
-
+// collect the state, send it off to the router
     axios({
       method: "POST",
       url: "/feedback",
@@ -32,7 +29,7 @@ function Review() {
     })
       .then((response) => {
         console.log("feedback details", response);
-        goToSuccess();
+        history.push("/success");
       })
       .catch((error) => {
         console.log("console");
