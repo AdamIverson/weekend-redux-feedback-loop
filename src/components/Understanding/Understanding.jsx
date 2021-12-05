@@ -36,8 +36,14 @@ function Understanding() {
     <div className="App">
       <h2>How well do you feel that you are understanding the material?</h2>
       <form onSubmit={(event) => addNewUnderstanding(event)}>
-        <input onChange={handleNewUnderstanding} type="number" placeholder="understanding" />
-        <button type="button" onClick={addNewUnderstanding}>NEXT</button>
+        <input
+          onChange={handleNewUnderstanding}
+          type="number"
+          placeholder="understanding"
+        />
+        <button type="button" onClick={addNewUnderstanding}>
+          NEXT
+        </button>
       </form>
     </div>
   );

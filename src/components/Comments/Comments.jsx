@@ -11,10 +11,10 @@ function Comments() {
   });
 
   const history = useHistory();
-    const goToReview = () => {
-      console.log("Going to Review");
-      history.push("/review");
-    };
+  const goToReview = () => {
+    console.log("Going to Review");
+    history.push("/review");
+  };
 
   const handleNewComment = (event) => {
     setNewComment({
@@ -32,22 +32,22 @@ function Comments() {
     goToReview();
   };
 
-    return (
-      <div className="App">
-        <form onSubmit={(event) => addNewComment(event)}>
-          <textarea
-            onChange={handleNewComment}
-            rows="10"
-            cols="50"
-            type="text"
-            placeholder="comments"
-          />
-          <button type="button" onClick={addNewComment}>
-            NEXT
-          </button>
-        </form>
-      </div>
-    );
-  };
+  return (
+    <div className="App">
+      <form onSubmit={(event) => addNewComment(event)}>
+        <textarea
+          onChange={handleNewComment}
+          rows="10"
+          cols="50"
+          type="text"
+          placeholder="comments"
+        />
+        <button type="button" onClick={addNewComment}>
+          NEXT
+        </button>
+      </form>
+    </div>
+  );
+}
 
 export default Comments;

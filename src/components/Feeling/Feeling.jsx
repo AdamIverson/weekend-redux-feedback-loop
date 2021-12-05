@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-import {useHistory} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 function Feeling() {
   const dispatch = useDispatch();
-  const feeling = useSelector((store) => store.feeling)
+  const feeling = useSelector((store) => store.feeling);
 
   let [newFeeling, setNewFeeling] = useState({
     feeling: 0,
@@ -13,8 +13,8 @@ function Feeling() {
 
   const history = useHistory();
   const goToUnderstanding = () => {
-    console.log('Going to Understanding');
-    history.push('/understanding')
+    console.log("Going to Understanding");
+    history.push("/understanding");
   };
 
   const handleNewFeeling = (event) => {
@@ -31,18 +31,24 @@ function Feeling() {
       payload: newFeeling,
     });
     goToUnderstanding();
-  }
-
-  return (
-      <div className='App'>
+  };
+  
+      return (
+        <div className="App">
           <h2>How are you feeling?</h2>
           <form onSubmit={(event) => addNewFeeling(event)}>
-            <input onChange={handleNewFeeling} type="number" placeholder="How are you feeling?"></input>
-            <button type="button" onClick={addNewFeeling}>NEXT</button>
+            <input
+              onChange={handleNewFeeling}
+              type="number"
+              placeholder="How are you feeling?"
+            ></input>
+            <button type="button" onClick={addNewFeeling}>
+              NEXT
+            </button>
           </form>
-      
-      </div>
-  );
-};
+        </div>
+      );
+  };
+
 
 export default Feeling;

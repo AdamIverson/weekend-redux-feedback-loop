@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 function Review() {
-  console.log('inside Review');
+  console.log("inside Review");
   const dispatch = useDispatch();
   const feeling = useSelector((store) => store.feelingReducer);
   const understanding = useSelector((store) => store.understandingReducer);
@@ -19,6 +19,7 @@ function Review() {
 
   const handleFeedback = () => {
     console.log("inside handleFeedback");
+
     axios({
       method: "POST",
       url: "/feedback",
@@ -27,13 +28,11 @@ function Review() {
         understanding: `${understanding.understanding}`,
         support: `${support.support}`,
         comments: `${comments.comment}`,
-        // flagged: `${flagged}`,
-        // date: `${date}`,
       },
     })
       .then((response) => {
         console.log("feedback details", response);
-        goToSuccess()
+        goToSuccess();
       })
       .catch((error) => {
         console.log("console");
@@ -62,7 +61,9 @@ function Review() {
         </tbody>
       </table>
 
-      <button type="button" onClick={handleFeedback}>NEXT</button>
+      <button type="button" onClick={handleFeedback}>
+        NEXT
+      </button>
     </div>
   );
 }

@@ -36,8 +36,14 @@ function Support() {
     <div className="App">
       <h2>How well do you feel that you are being supported?</h2>
       <form onSubmit={(event) => addNewSupport(event)}>
-        <input onChange={handleNewSupport}type="number" placeholder="support" />
-        <button type="button" onClick={addNewSupport}>NEXT</button>
+        <input
+          onChange={handleNewSupport}
+          type="number"
+          placeholder="support"
+        />
+        <button type="button" onClick={addNewSupport}>
+          NEXT
+        </button>
       </form>
     </div>
   );
