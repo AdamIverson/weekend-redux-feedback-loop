@@ -26,11 +26,18 @@ function Feeling() {
 
   const addNewFeeling = (event) => {
     console.log("new feeling dispatch", newFeeling);
+    console.log(newFeeling.feeling);
+    
+    if(newFeeling.feeling > 0) {
     dispatch({
       type: "FEELING",
       payload: newFeeling,
     });
     goToUnderstanding();
+  } else {
+    alert('no')
+    console.log('no');
+  }
   };
   
       return (
