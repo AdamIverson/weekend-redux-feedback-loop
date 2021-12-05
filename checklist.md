@@ -2,10 +2,10 @@
 
 
   [ ] Feelilng
-    [ ] input - number - required
-    [ ] next button to dispatch to Redux
-    [ ] Route function - history.push('/understanding')
-    [ ] reducer - 'FEELING'
+    [x] input - number - required
+    [x] next button to dispatch to Redux
+    [x] Route function - history.push('/understanding')
+    [x] reducer - 'FEELING'
     [x] Route
   [ ] Understanding
     [ ] input - number - required

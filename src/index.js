@@ -9,6 +9,8 @@ import logger from 'redux-logger';
 
 
 const feelingReducer = (state = [], action) => {
+  console.log('feelingReducer');
+  
   switch (action.type) {
       case 'FEELING':
           return action.payload;
@@ -17,6 +19,8 @@ const feelingReducer = (state = [], action) => {
 };
 
 const understandingReducer = (state = [], action) => {
+console.log('understandingReducer')
+
   switch (action.type) {
       case 'UNDERSTANDING':
           return action.payload;
@@ -25,6 +29,8 @@ const understandingReducer = (state = [], action) => {
 };
 
 const supportReducer = (state = [], action) => {
+  console.log('supportReducer');
+  
   switch (action.type) {
       case 'SUPPORT':
           return action.payload;
@@ -33,8 +39,10 @@ const supportReducer = (state = [], action) => {
 };
 
 const commentsReducer = (state = [], action) => {
+  console.log('commentsReducer');
+  
   switch (action.type) {
-      case 'COMMENTS':
+      case 'COMMENT':
           return action.payload;
   }
   return state;

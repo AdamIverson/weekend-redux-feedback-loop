@@ -13,6 +13,7 @@ function Success() {
 
   return (
       <div className='App'>
+        <h2>Thank you!</h2>
         <button onClick={startOver}>Leave New Feedback!</button>
       </div>
   );

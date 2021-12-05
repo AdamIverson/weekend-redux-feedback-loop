@@ -5,30 +5,40 @@ import { useHistory } from "react-router-dom";
 
 function Understanding() {
   const dispatch = useDispatch();
-  const comments = useSelector((store) => store.feeling)
 
   let [newUnderstanding, setNewUnderstanding] = useState({
-    comment: ""
+    understanding: 0,
   });
 
-  const addNewUnderstanding= (event) => {
+  const history = useHistory();
+  const goToSupport = () => {
+    console.log("Going to Support");
+    history.push("/support");
+  };
+
+  const handleNewUnderstanding = (event) => {
     setNewUnderstanding({
       ...newUnderstanding,
-      type: event.target.value,
+      understanding: event.target.value,
+    });
+  };
+
+  const addNewUnderstanding = (event) => {
+    console.log("new understanding dispatch", newUnderstanding);
+    dispatch({
+      type: "UNDERSTANDING",
+      payload: newUnderstanding,
     });
     goToSupport();
   };
 
-  const history = useHistory();
-  const goToSupport = () => {
-    console.log('Going to Support');
-    history.push('/support')
-  }
-
   return (
     <div className="App">
-      <input type="number" placeholder="UNDERSTAND"/>
-      <button onClick={goToSupport}>NEXT</button>
+      <h2>How well do you feel that you are understanding the material?</h2>
+      <form onSubmit={(event) => addNewUnderstanding(event)}>
+        <input onChange={handleNewUnderstanding} type="number" placeholder="understanding" />
+        <button type="button" onClick={addNewUnderstanding}>NEXT</button>
+      </form>
     </div>
   );
 }

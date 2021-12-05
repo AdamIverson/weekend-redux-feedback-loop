@@ -5,30 +5,41 @@ import {useHistory} from 'react-router-dom';
 
 function Feeling() {
   const dispatch = useDispatch();
-  const comments = useSelector((store) => store.feeling)
+  const feeling = useSelector((store) => store.feeling)
 
   let [newFeeling, setNewFeeling] = useState({
-    comment: ""
+    feeling: 0,
   });
-
-  const addNewFeeling= (event) => {
-    setNewFeeling({
-      ...newFeeling,
-      type: event.target.value,
-    });
-    goToUnderstanding();
-  };
 
   const history = useHistory();
   const goToUnderstanding = () => {
     console.log('Going to Understanding');
     history.push('/understanding')
+  };
+
+  const handleNewFeeling = (event) => {
+    setNewFeeling({
+      ...newFeeling,
+      feeling: event.target.value,
+    });
+  };
+
+  const addNewFeeling = (event) => {
+    console.log("new feeling dispatch", newFeeling);
+    dispatch({
+      type: "FEELING",
+      payload: newFeeling,
+    });
+    goToUnderstanding();
   }
 
   return (
       <div className='App'>
-          <input type="number" placeholder="How are you feeling?"></input>
-          <button onClick={goToUnderstanding}>NEXT</button>
+          <h2>How are you feeling?</h2>
+          <form onSubmit={(event) => addNewFeeling(event)}>
+            <input onChange={handleNewFeeling} type="number" placeholder="How are you feeling?"></input>
+            <button type="button" onClick={addNewFeeling}>NEXT</button>
+          </form>
       
       </div>
   );
